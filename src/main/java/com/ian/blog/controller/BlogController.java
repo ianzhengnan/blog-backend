@@ -23,13 +23,15 @@ public class BlogController {
     }
 
     @PostMapping("/save")
-//    @RequestHeader(name = "Content-Type", value = "application/json")
     public Blog save(@RequestBody Blog blog, Model model){
+        if (blog.getCreateAt() != null){
+            blog.setYear(blog.getCreateAt().getYear());
+        }
         return br.save(blog);
     }
 
     @PostMapping("/delete")
-    public void update(@RequestBody Blog blog){
+    public void delete(@RequestBody Blog blog){
         br.delete(blog);
     }
 

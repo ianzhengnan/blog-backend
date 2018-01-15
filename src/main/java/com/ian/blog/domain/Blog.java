@@ -12,12 +12,14 @@ public class Blog {
 
     @Id
     private String id;
+    private int number;
     private String title;
     private String uri;
     private Catalog catalog;
     private String content;
     private Long visitCount;
     private List<Comment> comments = new ArrayList<>();
+    private int year;
     private LocalDateTime createAt;
 
     public Blog() {
@@ -86,5 +88,21 @@ public class Blog {
 
     public void setCreateAt(LocalDateTime createAt) {
         this.createAt = createAt;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
