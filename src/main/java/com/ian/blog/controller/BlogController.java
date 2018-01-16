@@ -32,13 +32,20 @@ public class BlogController {
     @PostMapping("/update")
     public Blog update(@RequestBody Blog blog) throws Exception{
         Blog origin = br.findById(blog.getId()).get();
-        if (origin != null){
-            origin.setCatalog(blog.getCatalog());
+        if (blog.getContent() != null && !blog.getContent().equals("")){
             origin.setContent(blog.getContent());
+        }
+        if (blog.getCatalog() != null && blog.getCatalog().getId() != null && !blog.getCatalog().getId().equals("")){
+            origin.setCatalog(blog.getCatalog());
+        }
+        if (blog.getTitle() != null && !blog.getTitle().equals("")){
             origin.setTitle(blog.getTitle());
-            origin.setLastModifyAt(blog.getLastModifyAt());
-        }else{
-            throw new Exception("没有找到源文档");
+        }
+        if (blog.getUri() != null && !blog.getUri().equals("")){
+            origin.setUri(blog.getUri());
+        }
+        if (blog.getVisitCount() != null && blog.getVisitCount() != 0){
+            origin.setVisitCount(blog.getVisitCount());
         }
         return br.save(origin);
     }
