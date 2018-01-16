@@ -23,6 +23,11 @@ public class BlogController {
         return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "lastModifyAt")));
     }
 
+    @GetMapping("/{id}")
+    public Blog getBlogById(@PathVariable String id){
+        return br.findById(id).get();
+    }
+
     @PostMapping("/save")
     public Blog save(@RequestBody Blog blog){
         blog.setCreateAt(LocalDateTime.now());

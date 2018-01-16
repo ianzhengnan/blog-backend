@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7975b67d-8b14-493d-8973-b02ba7604520" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ian/blog/BlogApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/ian/blog/BlogApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ian/blog/domain/Blog.java" afterPath="$PROJECT_DIR$/src/main/java/com/ian/blog/domain/Blog.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,25 +15,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="BlogApplication.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlogApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ian/blog/BlogApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+            <state relative-caret-position="441">
+              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlogController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
+            <state relative-caret-position="316">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1982#1983#0" expanded="true" />
-                <element signature="e#2015#2016#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#2106#2107#0" expanded="true" />
+                <element signature="e#2139#2140#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ian/blog/dao/CommentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ian/blog/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ian/blog/domain/Blog.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ian/blog/BlogApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java" />
       </list>
     </option>
   </component>
@@ -445,7 +445,7 @@
       <option name="presentableId" value="Default" />
       <updated>1516018509244</updated>
       <workItem from="1516018513396" duration="2656000" />
-      <workItem from="1516067112319" duration="19774000" />
+      <workItem from="1516067112319" duration="20615000" />
     </task>
     <task id="LOCAL-00001" summary="update project">
       <created>1516018721357</created>
@@ -489,11 +489,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516092778844</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="set cross domain filter">
+      <created>1516095201863</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1516095201863</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22430000" />
+    <option name="totallyTimeSpent" value="23271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,7 +538,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33485195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33485195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -552,7 +559,8 @@
     <MESSAGE value="finish CRUD" />
     <MESSAGE value="correct blog update method" />
     <MESSAGE value="correct comment get function" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct comment get function" />
+    <MESSAGE value="set cross domain filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="set cross domain filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -647,8 +655,10 @@
           <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#2106#2107#0" expanded="true" />
+            <element signature="e#2139#2140#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -896,18 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ian/blog/controller/CatalogController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -957,9 +955,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ian/blog/BlogApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="31" column="63" lean-forward="true" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        <state relative-caret-position="441">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ian/blog/controller/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#2106#2107#0" expanded="true" />
+            <element signature="e#2139#2140#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
