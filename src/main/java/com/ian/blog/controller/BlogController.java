@@ -30,14 +30,22 @@ public class BlogController {
     }
 
     @PostMapping("/update")
-    public Blog update(@RequestBody Blog blog){
-
-        return null;
+    public Blog update(@RequestBody Blog blog) throws Exception{
+        Blog origin = br.findById(blog.getId()).get();
+        if (origin != null){
+            origin.setCatalog(blog.getCatalog());
+            origin.setContent(blog.getContent());
+            origin.setTitle(blog.getTitle());
+            origin.setLastModifyAt(blog.getLastModifyAt());
+        }else{
+            throw new Exception("没有找到源文档");
+        }
+        return br.save(origin);
     }
 
-    @PostMapping("/delete")
-    public void delete(@RequestBody Blog blog){
-        br.delete(blog);
+    @GetMapping("/delete/{id}")
+    public void delete(@PathVariable String id){
+        br.deleteById(id);
     }
 
 

@@ -3,13 +3,15 @@ package com.ian.blog.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Document
-public class Comment {
+public class Comment implements Serializable{
 
     @Id
-    private Long id;
+    private String id;
+    private String blogId;
     private String username;
     private String email;
     private String site;
@@ -20,11 +22,11 @@ public class Comment {
 
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -66,5 +68,13 @@ public class Comment {
 
     public void setCreateAt(LocalDateTime createAt) {
         this.createAt = createAt;
+    }
+
+    public String getBlogId() {
+        return blogId;
+    }
+
+    public void setBlogId(String blogId) {
+        this.blogId = blogId;
     }
 }

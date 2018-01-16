@@ -3,12 +3,13 @@ package com.ian.blog.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Document
-public class Blog {
+public class Blog implements Serializable{
 
     @Id
     private String id;
@@ -17,7 +18,7 @@ public class Blog {
     private Catalog catalog;
     private String content;
     private Long visitCount = 0L;
-    private List<Comment> comments = new ArrayList<>();
+//    private List<Comment> comments = new ArrayList<>();
     private LocalDateTime createAt;
     private LocalDateTime lastModifyAt;
     private int year;
@@ -79,13 +80,13 @@ public class Blog {
         this.visitCount = visitCount;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
+//    public List<Comment> getComments() {
+//        return comments;
+//    }
+//
+//    public void setComments(List<Comment> comments) {
+//        this.comments = comments;
+//    }
 
     public LocalDateTime getCreateAt() {
         return createAt;
