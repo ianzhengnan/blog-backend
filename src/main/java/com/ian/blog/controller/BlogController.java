@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
 
 
 @RestController
@@ -23,11 +24,15 @@ public class BlogController {
     }
 
     @PostMapping("/save")
-    public Blog save(@RequestBody Blog blog, Model model){
-        if (blog.getCreateAt() != null){
-            blog.setYear(blog.getCreateAt().getYear());
-        }
-        return br.save(blog);
+    public Blog save(@RequestBody Blog blog){
+        blog.setCreateAt(LocalDateTime.now());
+        return br.insert(blog);
+    }
+
+    @PostMapping("/update")
+    public Blog update(@RequestBody Blog blog){
+
+        return null;
     }
 
     @PostMapping("/delete")
