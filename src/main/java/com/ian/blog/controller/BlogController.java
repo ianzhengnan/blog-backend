@@ -20,7 +20,7 @@ public class BlogController {
 
     @GetMapping
     public Page<Blog> getAllBlogs(){
-        return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "createAt")));
+        return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "lastModifyAt")));
     }
 
     @PostMapping("/save")
@@ -47,6 +47,7 @@ public class BlogController {
         if (blog.getVisitCount() != null && blog.getVisitCount() != 0){
             origin.setVisitCount(blog.getVisitCount());
         }
+        origin.setLastModifyAt(LocalDateTime.now());
         return br.save(origin);
     }
 

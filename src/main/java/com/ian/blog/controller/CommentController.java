@@ -3,6 +3,7 @@ package com.ian.blog.controller;
 import com.ian.blog.dao.CommentRepository;
 import com.ian.blog.domain.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -17,13 +18,14 @@ public class CommentController {
 
     @GetMapping("/{blogId}")
     public List<Comment> list(@PathVariable String blogId){
-        List<Comment> comments = cmr.findByBlogId(blogId);
+        List<Comment> comments = cmr.findByBlogId(blogId, new Sort(Sort.Direction.DESC, "createAt"));
         // find related blog
         /*Blog blog = br.findById(blogId).get();
         if (blog != null){
             blog.setComments(comments.getContent());
             br.save(blog);
         }*/
+
         return comments;
     }
 
