@@ -47,6 +47,9 @@ public class BlogController {
         if (blog.getVisitCount() != null && blog.getVisitCount() != 0){
             origin.setVisitCount(blog.getVisitCount());
         }
+        if (blog.getSummary() != null && !blog.getSummary().equals("")){
+            origin.setSummary(blog.getSummary());
+        }
         origin.setLastModifyAt(LocalDateTime.now());
         return br.save(origin);
     }

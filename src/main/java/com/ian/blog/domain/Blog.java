@@ -16,6 +16,7 @@ public class Blog implements Serializable{
     private String title;
     private String uri;
     private Catalog catalog;
+    private String summary;
     private String content;
     private Long visitCount = 0L;
 //    private List<Comment> comments = new ArrayList<>();
@@ -120,5 +121,13 @@ public class Blog implements Serializable{
 
     public void setLastModifyAt(LocalDateTime lastModifyAt) {
         this.lastModifyAt = lastModifyAt;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }
