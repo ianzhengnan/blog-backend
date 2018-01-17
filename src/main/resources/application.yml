@@ -2,3 +2,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://centos.docker:27017/ian-blog
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
