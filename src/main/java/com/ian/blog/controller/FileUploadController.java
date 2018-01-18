@@ -1,5 +1,7 @@
 package com.ian.blog.controller;
 
+import com.ian.blog.dao.BlogRepository;
+import com.ian.blog.domain.Blog;
 import com.ian.blog.exception.StorageFileNotFoundException;
 import com.ian.blog.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,9 @@ import java.util.stream.Collectors;
 public class FileUploadController {
 
     private final StorageService storageService;
+
+    @Autowired
+    private BlogRepository br;
 
     @Autowired
     public FileUploadController(StorageService storageService){
@@ -55,6 +60,7 @@ public class FileUploadController {
 
     @PostMapping("/")
     public String handleFileUpload(@RequestParam("file") MultipartFile[] files,
+                                   @RequestParam("id") String blogId,
                                    RedirectAttributes redirectAttributes){
 
         for (MultipartFile file :
@@ -62,6 +68,13 @@ public class FileUploadController {
             storageService.store(file);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded " + file.getOriginalFilename() + "!");
+        }
+
+        // update blog
+        Blog blog = br.findById(blogId).get();
+        if (blog != null){
+            blog.setContent(files[0].getOriginalFilename());
+            br.save(blog);
         }
         return "redirect:/upload/";
     }
