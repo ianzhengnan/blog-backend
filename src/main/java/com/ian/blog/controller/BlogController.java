@@ -1,6 +1,7 @@
 package com.ian.blog.controller;
 
 import com.ian.blog.dao.BlogRepository;
+import com.ian.blog.dao.CatalogRepository;
 import com.ian.blog.domain.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,9 @@ public class BlogController {
 
     @Autowired
     private BlogRepository br;
+
+    @Autowired
+//    private CatalogRepository catalogRepository;
 
     @GetMapping
     public Page<Blog> getAllBlogs(){

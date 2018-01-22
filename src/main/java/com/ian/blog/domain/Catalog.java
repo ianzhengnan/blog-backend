@@ -13,6 +13,7 @@ public class Catalog implements Serializable{
     private String id;
     private String name;
     private String description;
+    private int articleCount;
     private LocalDateTime createAt;
 
     public Catalog() {
@@ -49,5 +50,13 @@ public class Catalog implements Serializable{
 
     public void setCreateAt(LocalDateTime createAt) {
         this.createAt = createAt;
+    }
+
+    public int getArticleCount() {
+        return articleCount;
+    }
+
+    public void setArticleCount(int articleCount) {
+        this.articleCount = articleCount;
     }
 }

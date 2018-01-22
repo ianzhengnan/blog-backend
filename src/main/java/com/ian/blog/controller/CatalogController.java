@@ -1,5 +1,6 @@
 package com.ian.blog.controller;
 
+import com.ian.blog.dao.BlogRepository;
 import com.ian.blog.dao.CatalogRepository;
 import com.ian.blog.domain.Catalog;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,12 @@ public class CatalogController {
     @Autowired
     private CatalogRepository cr;
 
+    @Autowired
+    private BlogRepository br;
+
     @GetMapping
     public List<Catalog> getAllCatalogs(){
-        return cr.findAll();
+        return getAllCats();
     }
 
     @PostMapping("/add")
@@ -41,5 +45,15 @@ public class CatalogController {
     @GetMapping("/delete/{id}")
     public void delete(@PathVariable String id){
         cr.deleteById(id);
+    }
+
+    private List<Catalog> getAllCats(){
+
+        List<Catalog> catalogs = cr.findAll();
+        for (Catalog catalog :
+                catalogs) {
+            catalog.setArticleCount(br.findByCatalogId(catalog.getId()).size());
+        }
+        return catalogs;
     }
 }
