@@ -25,12 +25,12 @@ public class BlogController {
 //    private CatalogRepository catalogRepository;
 
     @GetMapping
-    public Page<Blog> getAllBlogs(@RequestParam("catalogId") String catalogId){
+    public Page<Blog> getAllBlogs(@RequestParam(name = "catalogId", required = false) String catalogId){
         if (catalogId != null && !catalogId.equals("")) {
             return br.findAllByCatalogId(new ObjectId(catalogId),
-                    PageRequest.of(0, 10000, new Sort(Sort.Direction.DESC, "lastModifyAt")));
+                    PageRequest.of(0, 10000, new Sort(Sort.Direction.DESC, "createAt")));
         }
-        return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "lastModifyAt")));
+        return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "createAt")));
     }
 
     @GetMapping("/{id}")
