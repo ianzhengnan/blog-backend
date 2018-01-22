@@ -3,6 +3,7 @@ package com.ian.blog.controller;
 import com.ian.blog.dao.BlogRepository;
 import com.ian.blog.dao.CatalogRepository;
 import com.ian.blog.domain.Catalog;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,7 +53,7 @@ public class CatalogController {
         List<Catalog> catalogs = cr.findAll();
         for (Catalog catalog :
                 catalogs) {
-            catalog.setArticleCount(br.findByCatalogId(catalog.getId()).size());
+            catalog.setArticleCount(br.countBlogsByCatalogId(new ObjectId(catalog.getId())));
         }
         return catalogs;
     }

@@ -3,6 +3,7 @@ package com.ian.blog.controller;
 import com.ian.blog.dao.BlogRepository;
 import com.ian.blog.dao.CatalogRepository;
 import com.ian.blog.domain.Blog;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @RestController
@@ -19,11 +21,15 @@ public class BlogController {
     @Autowired
     private BlogRepository br;
 
-    @Autowired
+//    @Autowired
 //    private CatalogRepository catalogRepository;
 
     @GetMapping
-    public Page<Blog> getAllBlogs(){
+    public Page<Blog> getAllBlogs(@RequestParam("catalogId") String catalogId){
+        if (catalogId != null && !catalogId.equals("")) {
+            return br.findAllByCatalogId(new ObjectId(catalogId),
+                    PageRequest.of(0, 10000, new Sort(Sort.Direction.DESC, "lastModifyAt")));
+        }
         return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "lastModifyAt")));
     }
 
