@@ -25,6 +25,11 @@ public class CatalogController {
         return getAllCats();
     }
 
+    @GetMapping("/{id}")
+    public Catalog getCatalogById(@PathVariable String id){
+        return cr.findById(id).get();
+    }
+
     @PostMapping("/add")
     public Catalog add(@RequestBody Catalog catalog){
         catalog.setCreateAt(LocalDateTime.now());
