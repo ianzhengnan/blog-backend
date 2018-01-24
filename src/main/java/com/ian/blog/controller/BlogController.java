@@ -7,6 +7,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +26,18 @@ public class BlogController {
 //    private CatalogRepository catalogRepository;
 
     @GetMapping
-    public Page<Blog> getAllBlogs(@RequestParam(name = "catalogId", required = false) String catalogId){
+    public Page<Blog> getAllBlogs(@RequestParam(name = "catalogId", required = false) String catalogId,
+                                  @RequestParam(name = "page", defaultValue = "0", required = false) Integer page){
+
+        Sort sort = new Sort(Sort.Direction.DESC, "createAt");
+        Pageable pageable = null;
+
         if (catalogId != null && !catalogId.equals("")) {
-            return br.findAllByCatalogId(new ObjectId(catalogId),
-                    PageRequest.of(0, 10000, new Sort(Sort.Direction.DESC, "createAt")));
+            pageable = PageRequest.of(page, 10000, sort);
+            return br.findAllByCatalogId(new ObjectId(catalogId), pageable);
         }
-        return br.findAll(PageRequest.of(0, 20, new Sort(Sort.Direction.DESC, "createAt")));
+        pageable = PageRequest.of(page, 3, sort);
+        return br.findAll(pageable);
     }
 
     @GetMapping("/{id}")
