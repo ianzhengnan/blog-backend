@@ -16,6 +16,7 @@ public class Comment implements Serializable{
     private String email;
     private String site;
     private String content;
+    private Comment replyComment;
     private LocalDateTime createAt;
 
     public Comment() {
@@ -76,5 +77,13 @@ public class Comment implements Serializable{
 
     public void setBlogId(String blogId) {
         this.blogId = blogId;
+    }
+
+    public Comment getReplyComment() {
+        return replyComment;
+    }
+
+    public void setReplyComment(Comment replyComment) {
+        this.replyComment = replyComment;
     }
 }
